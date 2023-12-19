@@ -94,8 +94,7 @@
             .innerHTML = `Wins: ${score.Wins}, Loses:${score.Loses}, Draw: ${score.Draw}`;
           document.querySelector(".js-result")
             .innerHTML="Click any icon to start!";  
-          document.querySelector(".js-picks")
-            .innerHTML="";          
+      
 
 
       }
