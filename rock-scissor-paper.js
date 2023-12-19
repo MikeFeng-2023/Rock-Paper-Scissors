@@ -85,7 +85,7 @@
               .innerHTML = result;
 
           document.querySelector('.js-picks')
-              .innerHTML = `Your ${myPick} - ${computerPick} computer`;
+              .innerHTML = `Your are ${myPick} - Computer is ${computerPick}`;
       }
 
       function updateScoreElement(){
