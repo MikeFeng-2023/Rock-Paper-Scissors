@@ -66,29 +66,41 @@
             } else if(computerPick === 'Scissors'){
               result = 'You Lose!'
             }else{
-              result = 'It is a draw!'
+              result = 'It is a draw!';
             }
           }
           
           if(result === 'You Win!'){
               score.Wins++;
             } else if(result === 'You Lose!'){
-              score.Loses++
+              score.Loses++;
             }else{
-              score.Draw++
+              score.Draw++;
             }
 
           localStorage.setItem('score',JSON.stringify(score));   
 
-            updateScoreElement();
-            document.querySelector('.js-result')
+          updateScoreElement();
+          document.querySelector('.js-result')
               .innerHTML = result;
 
-            document.querySelector('.js-picks')
+          document.querySelector('.js-picks')
               .innerHTML = `Your ${myPick} - ${computerPick} computer`;
       }
 
       function updateScoreElement(){
+       
+          document.querySelector('.js-score')
+            .innerHTML = `Wins: ${score.Wins}, Loses:${score.Loses}, Draw: ${score.Draw}`;
+          document.querySelector(".js-result")
+            .innerHTML="Click any icon to start!";  
+          document.querySelector(".js-picks")
+            .innerHTML="";          
+
+
+      }
+
+      function resetScoreElement(){
         if(isAutoPlaying== false){
           document.querySelector('.js-score')
             .innerHTML = `Wins: ${score.Wins}, Loses:${score.Loses}, Draw: ${score.Draw}`;
@@ -115,9 +127,10 @@
             }else{
               myPick ='Scissors';
             }
-            comparePicks(myPick);
-          }, 1000)   
-          isAutoPlaying = true;       
+          comparePicks(myPick);
+          }, 1000);   
+          isAutoPlaying = true;
+      
         }
         else{
           clearInterval(intervalID);
