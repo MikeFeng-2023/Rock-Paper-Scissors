@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="./rock-scissor-paper.css">
+    
+  </head>
+  <body>
+    <div class="flexContainer">
+      <p class="title">Rock Paper Scissors</p>
+    </div>
+    <div class="flexContainer">
+      <button class="move-button js-rock-button" ><img class="move-icon" src="./images/rock.png"></button>
+
+        <button class="move-button" onclick="
+          comparePicks('Paper');
+      "><img class="move-icon" src="./images/paper.png"></button>
+
+      <button class="move-button" onclick="
+          comparePicks('Scissors');
+      "><img class="move-icon" src="./images/scissors.png"></button>      
+    </div>
+    <div class="flexContainer">
+      <p class="js-result">Click any icon to start!</p>      
+    </div>
+    <div class="flexContainer">
+      <p class="js-picks"></p>
+    </div>
+    <div class="flexContainer">
+      <p class="js-score"></p>
+    </div>
+    <div class="flexContainer">
+      <button onclick="
+      score.Wins = 0;
+      score.Loses =0;
+      score.Draw = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+      ">Reset score</button>
+
+      <button class="autoplay-button" onclick="
+        autoPlay();
+        ">Auto Play/Off</button>      
+    </div>
+    <script src="./rock-scissor-paper.js"></script>
+  </body>
+</html>
