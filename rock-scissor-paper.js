@@ -91,18 +91,14 @@
       function updateScoreElement(){
        
           document.querySelector('.js-score')
-            .innerHTML = `Wins: ${score.Wins}, Loses:${score.Loses}, Draw: ${score.Draw}`;
-          document.querySelector(".js-result")
-            .innerHTML="Click any icon to start!";  
+            .innerHTML = `Wins: ${score.Wins}, Loses:${score.Loses}, Draw: ${score.Draw}`; 
       
-
-
       }
 
       function resetScoreElement(){
         if(isAutoPlaying== false){
           document.querySelector('.js-score')
-            .innerHTML = `Wins: ${score.Wins}, Loses:${score.Loses}, Draw: ${score.Draw}`;
+            .innerHTML = `Wins: 0, Loses: 0, Draw: 0`;
           document.querySelector(".js-result")
             .innerHTML="Click any icon to start!";  
           document.querySelector(".js-picks")
